@@ -9,6 +9,8 @@ const express_1 = __importDefault(require("express"));
 const mongoose_1 = __importDefault(require("mongoose"));
 const passport_1 = __importDefault(require("passport"));
 const auth_1 = __importDefault(require("./api/auth"));
+const jobs_1 = __importDefault(require("./api/jobs"));
+const profile_1 = __importDefault(require("./api/profile"));
 require("./config/passport");
 const app = express_1.default();
 const PORT = process.env.port || 5000;
@@ -40,6 +42,8 @@ app.get("/", (_, res) => {
 });
 app.use(passport_1.default.initialize());
 app.use("/auth", auth_1.default);
+app.use("/profile", profile_1.default);
+app.use("/jobs", jobs_1.default);
 app.listen(PORT, () => {
     console.log("Server at PORT:", PORT);
 });

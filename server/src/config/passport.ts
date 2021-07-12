@@ -1,11 +1,13 @@
 import passport from "passport";
 import { Strategy } from "passport-google-oauth2";
 import User from "../models/user";
+// import { User } from "../entities/Users";
+// import { getConnection } from "typeorm";
 
 //? Google Auth
 passport.use(new Strategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET, //IVvMi7-ERFHKj6NayInh5QBn
     callbackURL: `${process.env.SERVER_END_POINT}/auth/google/callback`,
     passReqToCallback: true,
 },
