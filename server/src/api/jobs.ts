@@ -43,6 +43,25 @@ route.post("/add", validateUser, async (req, res) => {
 
 })
 
+route.get('/feed', validateUser, async (req, res) => {
+    try {
+        const jobs = await Jobs.find({
+            jobsCategories: {
+                $in: req.user.wantedCatogries
+            }
+        }); // array
+        res.json({
+            ok: true,
+            jobs
+        })
+    } catch {
+        res.json({
+            ok: false,
+            message: "Error"
+        })
+    }
+})
+
 // If you are reading this I hope you have a great great day :)
 // Things will always get better uwu
 

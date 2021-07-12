@@ -1,0 +1,80 @@
+$dim-font-color: #9F9F9F;
+
+.feedJobHoder{
+    padding: 10px;
+    @include flex;
+
+    border-bottom: 1px solid #DFDFDF;
+    cursor: pointer;
+    .container{
+        width: 90%;
+        height: 90%;
+
+        @include flex(flex-start, flex-start);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .header{
+        @include flex(space-between);
+        width: 100%;
+        flex-shrink: 0;
+
+        .title{
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        .issuedDate{
+            color: $dim-font-color;
+            font-size: 1.2rem;
+        }
+
+        .number{
+            align-self: flex-end;
+        }
+    }
+    .jobsCats{
+        @include flex(flex-start);
+        gap: 10px;
+        flex-wrap:wrap ;
+    }
+
+    .footer{
+        width: 100%;
+        color: $dim-font-color;
+        @include flex(space-between)
+    }
+    .employeeApplied{
+        @include flex(space-between);
+        width: 150px;
+    }
+    .entity{
+        @include flex;
+        gap: 5px;
+    }
+
+    .accepted {
+        color: $theme-green;
+    }
+
+    .pending {
+        color: $secondary-theme-color;
+    }
+    .rejected {
+        color: $theme-red;
+    }
+
+    .number {
+        color: $theme-color;
+        font-weight: bold;
+    }
+
+    &:hover {
+        background-color: lighten($color: $card-color, $amount: 6);
+    }
+
+    &:hover .header .title {
+        color: $secondary-theme-color
+    } 
+}

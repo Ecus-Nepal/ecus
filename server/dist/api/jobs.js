@@ -44,5 +44,24 @@ route.post("/add", verifyUser_1.validateUser, (req, res) => __awaiter(void 0, vo
         });
     }
 }));
+route.get('/feed', verifyUser_1.validateUser, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const jobs = yield jobs_1.default.find({
+            jobsCategories: {
+                $in: req.user.wantedCatogries
+            }
+        });
+        res.json({
+            ok: true,
+            jobs
+        });
+    }
+    catch (_a) {
+        res.json({
+            ok: false,
+            message: "Error"
+        });
+    }
+}));
 exports.default = route;
 //# sourceMappingURL=jobs.js.map

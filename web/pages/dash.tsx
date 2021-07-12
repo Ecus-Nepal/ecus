@@ -16,7 +16,6 @@ const Dash: React.FC = () => {
         document.body.style.overflowY = "auto"
     }, [])
 
-
     const { user } = useUser()
     console.log(user?.accountType)
 
