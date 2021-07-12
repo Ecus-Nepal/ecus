@@ -4,6 +4,8 @@ import express from "express";
 import mongoose from "mongoose";
 import passport from "passport";
 import auth from "./api/auth";
+import jobs from "./api/jobs";
+import profile from "./api/profile";
 import "./config/passport";
 
 const app = express()
@@ -52,6 +54,8 @@ app.use(passport.initialize())
 
 // * Route
 app.use("/auth", auth)
+app.use("/profile", profile)
+app.use("/jobs", jobs)
 
 
 // * Initilize Server

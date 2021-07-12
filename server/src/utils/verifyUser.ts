@@ -1,6 +1,7 @@
 import { RequestHandler } from "express"
 import jwt from "jsonwebtoken"
 
+
 export const validateUser: RequestHandler = (req, res, next) => {
 
     const token = req.header("Authorization")?.split(" ")[1]
