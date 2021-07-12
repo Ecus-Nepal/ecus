@@ -7,6 +7,11 @@
 
     background-color: lighten($color: $card-color, $amount: 8);
     @include flex(space-between);
+
+    .profile {
+        width: 180px;
+        @include flex(space-between);
+    }
     cursor: pointer;
     .pic{
         width: 50px;
@@ -27,6 +32,7 @@
         gap:20px;
 
         span {
+            z-index: 3;
             cursor: pointer;
             user-select: none;
             font-size: 2.5rem;
@@ -40,4 +46,6 @@
             color: $theme-red;
         }
     }
+
+    
 }

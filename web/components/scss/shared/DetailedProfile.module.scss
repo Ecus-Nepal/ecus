@@ -3,14 +3,36 @@
     @include flex(flex-start, flex-start);
     flex-direction: column;
     gap: 20px;
+    .userProf__container{
+        @include flex(space-between);
+        width: 100%;
+        
+        .downloadCV{
+            @include flex(space-between);
+            cursor: pointer;
+            width: 85px;
+            padding: 10px;
+            color: $theme-red;
+            background-color: darken($color: $card-color, $amount: 7);
+            span{
+                font-weight: bold;
+                color: $theme-color;
+            }
 
+            &:hover{
+            background-color: darken($color: $card-color, $amount: 15);
+
+            }
+        }
+    }
     .userProfile{
         width: 40%;
         height: 100px;
 
         @include flex(space-between);
         
-        .pic {
+
+        .pic {  
             flex-shrink: 0;
             width: 100px;
             height: 100px;

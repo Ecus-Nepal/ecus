@@ -34,10 +34,12 @@ $dim-font-color: #9F9F9F;
             align-self: flex-end;
         }
     }
-    .jobsCats{
+    .jobsCats ul{
         @include flex(flex-start);
-        gap: 10px;
+        gap: 20px;
         flex-wrap:wrap ;
+        list-style: none;
+
     }
 
     .footer{

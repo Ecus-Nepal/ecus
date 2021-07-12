@@ -1,6 +1,6 @@
 declare interface IJobsDB {
     title: string,
-    description: string,
+    desc: string,
     creatorId: string,
     creatorName: string,
     expDate: string,

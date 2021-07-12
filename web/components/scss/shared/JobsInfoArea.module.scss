@@ -8,6 +8,13 @@
     height: 100vh;
     background-color: $card-color;
 
+    border-left: 2px solid #9c9c9c;
+
+    .container {
+        @include flex(flex-start, flex-start);
+        
+    }
+
     .closeInfoButton{   
         width: 30px;
         height: 30px;
@@ -35,6 +42,28 @@
         flex-wrap: wrap;
         gap: 10px;
     }
+
+
+    .acceptedClient{
+
+        height: 100px;
+        ul {
+            height: 100%;
+            @include flex(flex-start, flex-start);
+            flex-direction: column;
+            flex-wrap: wrap;
+            margin-top: 10px;
+            list-style: none;
+        }
+
+        li {
+            cursor: pointer;
+            font-size: 1.8rem;
+            font-weight: bolder;
+            color: $secondary-theme-color;
+        }
+    }
+
 }
 
 .profileModal{
@@ -45,7 +74,7 @@
     gap: 30px;
 
     width: 50vw;
-    max-height: 400px;
+    max-height: 450px;
     overflow-y: auto;
 
     padding: 10px;

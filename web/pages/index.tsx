@@ -17,6 +17,8 @@ export default function Home() {
     document.body.style.overflow = "hidden"
   })
 
+
+
   useEffect(() => {
     (async () => {
       setLoading(true)

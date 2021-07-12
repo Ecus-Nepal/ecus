@@ -2,7 +2,9 @@ $border-color: #d4d1d1;
 
 .jobsFeed {
     width: 55%;
-    height: 800px;
+    height: fit-content;
+
+    margin-bottom: 40px;
 
     background-color: white;
     border-radius: 6px;
@@ -18,4 +20,60 @@ $border-color: #d4d1d1;
 
         @include flex(flex-start);
     }
+
+}
+.applyModal{
+        @include position-center;
+    
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    
+        width: 50vw;
+        max-height: 400px;
+        overflow-y: auto;
+    
+        padding: 10px;
+    
+        
+        
+        outline: none;
+    
+        border-radius: 10px;
+        background-color: $card-color;
+
+        textarea {
+            resize: none;
+            height: 150px;
+        }
+        .actionBtn{
+            @include flex(space-between);
+           width: 50%;
+        }
+
+        .cvUpload{
+            @include flex(space-between);
+            width: 80px;
+            height: 30px;
+            background-color: darken($color: $card-color, $amount: 15);
+
+            border-radius:0 1000px 1000px 0;
+
+            span {
+                margin-left: 10px;
+                font-weight: bolder;
+            }
+            .button{
+                height: 100%;
+                width: 50%;
+                background-color: $theme-green;
+                @include flex;
+
+                border-radius: 0 1000px 1000px 0;
+
+                cursor: pointer;
+
+            }
+        }
+    
 }

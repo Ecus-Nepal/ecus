@@ -4,6 +4,7 @@ import { HiX } from "react-icons/hi";
 import Modal from "react-modal";
 import style from "../scss/shared/JobsInfoArea.module.scss";
 import ActionBtn from "./ActionBtn";
+import ChatContainer from "./ChatContainer";
 import DetailedProfile from "./DetailedProfile";
 interface Props {
     title: string,
@@ -20,6 +21,27 @@ const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
         setShowModal(true)
     }
 
+    const [newClients, setNewClients] = useState([
+        "Jon Mayer",
+        "Mix Man",
+        "A Name"
+    ])
+    const [acceptedClients, setAcceptedClients] = useState([
+        "Max Mofo",
+        "Joji Club",
+        "Coffee"
+    ])
+
+    const onAccept = (name: string) => {
+        setAcceptedClients(prev => prev.concat(name))
+        setNewClients(prev => prev.filter(client => client !== name))
+
+    }
+
+    const onReject = (name: string) => {
+        setNewClients(prev => prev.filter(client => client !== name))
+    }
+
     return (
         <>
             <div className={style.jobInfoArea} >
@@ -28,36 +50,65 @@ const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
                 >
                     <HiX />
                 </button>
-                <div className={style.jobInfo}>
-                    <span className="highlight bold" >{title}</span>
-                    <p>
-                        In publishing and graphic design,
-                        Lorem ipsum is a placeholder text
-                        commonly used to demonstrate the
-                        visual form of a document or a
-                        typeface without relying on meaningful
-                        content. Lorem ipsum may be used
-                        as a placeholder before final
-                        copy is available
-                    </p>
-                    <div>
-                        Salary: Rs 20,200
+                <div className={style.container} >
+                    <div className={style.jobInfo}>
+                        <span className="highlight bold" >{title}</span>
+                        <p>
+                            In publishing and graphic design,
+                            Lorem ipsum is a placeholder text
+                            commonly used to demonstrate the
+                            visual form of a document or a
+                            typeface without relying on meaningful
+                            content. Lorem ipsum may be used
+                            as a placeholder before final
+                            copy is available
+                        </p>
+                        <div>
+                            Salary: Rs 20,200
+                        </div>
+
+                        {
+                            type === "employer" &&
+                            <>
+                                <h3>New Clients</h3>
+                                <div className={style.appliedUsers} >
+
+                                    {
+                                        newClients.map(client => (
+                                            <AppliedUserHolder
+                                                profilePic={"sda"}
+                                                name={client}
+                                                onClick={handleProfileClick}
+                                                onReject={() => onReject(client)}
+                                                onAccept={() => onAccept(client)}
+                                            />
+                                        ))
+                                    }
+
+                                </div>
+                                <div className={style.acceptedClient} >
+                                    <h3>Accepted Clients</h3>
+                                    <ul>
+                                        {
+                                            acceptedClients.map(client => (
+                                                <li>{client}</li>
+                                            ))
+                                        }
+
+                                    </ul>
+                                </div>
+                            </>
+                        }
+
                     </div>
-
-                    {
-                        type === "employer" &&
-                        <div className={style.appliedUsers} >
-                            <AppliedUserHolder
-                                profilePic={"sda"}
-                                name="Aakash Khanal"
-                                onClick={handleProfileClick}
-                            />
-
-                        </div>}
-
-
+                    <div>
+                        <ChatContainer />
+                    </div>
                 </div>
             </div>
+
+
+
             {
                 type === "employer" &&
                 <Modal

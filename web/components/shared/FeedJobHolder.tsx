@@ -1,6 +1,5 @@
 import { IoMdPerson } from "react-icons/io"
 import style from "../scss/shared/FeedJobHolder.module.scss"
-import JobCatHolder from "./JobCatHolder"
 
 interface Props {
     title: string,
@@ -8,12 +7,16 @@ interface Props {
     about: string,
     jobsCats: string[],
     expDate: string,
-    salary: number
+    salary: number,
+    rejected: number,
+    accepted: number,
+    pending: number,
+    onClick?: () => any
 }
 
-const FeedJobHolder: React.FC<Props> = ({ title, issuedDate, about, jobsCats, expDate, salary }) => {
+const FeedJobHolder: React.FC<Props> = ({ onClick, title, rejected, accepted, pending, issuedDate, about, jobsCats, expDate, salary }) => {
     return (
-        <div className={style.feedJobHoder} >
+        <div className={style.feedJobHoder} onClick={onClick}>
             <div className={style.container} >
                 <div className={style.header} >
                     <div className={style.leftPart} >
@@ -21,22 +24,22 @@ const FeedJobHolder: React.FC<Props> = ({ title, issuedDate, about, jobsCats, ex
                             {title}
                         </div>
                         <div className={style.issuedDate} >
-                            Issued Date: {issuedDate}
+                            Issued Date: {new Date(issuedDate).toDateString()}
                         </div>
                     </div>
                     <div className={style.number} >
                         <section className={style.employeeApplied} >
                             <div className={`${style.entity} ${style.accepted}`} >
                                 <IoMdPerson size="2rem" />
-                                <div className={style.number} >16</div>
+                                <div className={style.number} >{accepted}</div>
                             </div>
                             <div className={`${style.entity} ${style.pending}`} >
                                 <IoMdPerson size="2rem" />
-                                <div className={style.number}>16</div>
+                                <div className={style.number}>{pending}</div>
                             </div>
                             <div className={`${style.entity} ${style.rejected}`} >
                                 <IoMdPerson size="2rem" />
-                                <div className={style.number}>16</div>
+                                <div className={style.number}>{rejected}</div>
                             </div>
                         </section>
                     </div>
@@ -45,15 +48,16 @@ const FeedJobHolder: React.FC<Props> = ({ title, issuedDate, about, jobsCats, ex
                     {about}
                 </div>
                 <div className={style.jobsCats} >
-                    {
+                    <ul> {
                         jobsCats.map((job, i) => (
-                            <JobCatHolder job={job} key={i} />
+                            <li key={i}> <span className="highlight" >{job}</span> </li>
                         ))
                     }
+                    </ul>
                 </div>
                 <div className={style.footer} >
                     <section className={style.expName} >
-                        Exp Date: {expDate}
+                        Exp Date: {new Date(expDate).toDateString()}
                     </section>
                     <section className={style.salary} >
                         Rs {salary.toLocaleString()}
