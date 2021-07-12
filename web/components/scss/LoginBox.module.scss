@@ -1,0 +1,59 @@
+.loginBox{
+    width: 50vw;
+    min-height: 302px;
+
+    min-width: 400px;
+    height: auto;
+
+    background-color: $secondary-theme-color;
+
+    border-radius: $default-border-radius;
+
+    padding: 10px 30px 10px 30px;
+    color: $theme-color;
+
+    &__ecusLogo{
+        @include flex(center, flex-start);
+        flex-direction: column;
+
+        width: 200px;
+        .name {
+            font-size: 3rem;
+            font-weight: 900;
+        }
+
+        .sub{
+            margin-top: -10px;
+            font-size: 0.5rem;
+        }
+    }
+
+    .welcome{
+        margin-top: 30px;
+
+        .title{
+            font-size: 3rem;
+            font-weight: bold;
+            color: aliceblue;
+        }
+
+        p{
+            font-size: 1.6rem;
+            font-weight: 900;
+        }
+    }
+
+    .btn{
+
+        width: 100%;
+        margin-top: 40px;
+        @include flex;
+
+        button{
+            font-size: 2rem;
+            font-weight: 600;
+
+            width: 60%;
+        }
+    }
+}

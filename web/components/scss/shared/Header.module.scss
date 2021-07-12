@@ -1,0 +1,16 @@
+.header{
+    
+    width: 100vw;
+    height: 70px;
+    background-color: $background-color;
+    // background-color: $theme-color;
+
+    font-size: 5rem;
+    font-weight: bolder;
+
+    padding: 0 $logo-padding;
+
+    nav {
+        @include flex(space-between)
+    }
+}

@@ -1,0 +1,18 @@
+.login {
+    &__wave{
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+
+        @include flex(flex-end);
+        background: url(../public/assets/waves/home.svg);
+        background-position: -10px -30px;
+        background-repeat: no-repeat;
+        // background: black;
+    }
+    
+
+    &__box{
+        @include position-center;
+    }
+}
