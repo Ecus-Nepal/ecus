@@ -1,0 +1,49 @@
+.prevJobsCard{
+    width: 100%;
+    min-height: 100px;
+
+    background-color: $card-color;
+    border-radius: 5px;
+    margin-top: 10px;
+
+    @include flex(center, flex-start);
+    flex-direction: column;
+    gap: 10px;  
+    
+    cursor: pointer;
+
+    padding: 10px;
+    .title{
+        font-weight: 500;
+    }
+
+    &:hover {
+        background-color: darken($color: $card-color, $amount: 3);
+    }
+
+    .employeeApplied{
+        @include flex;
+        gap: 25px;
+    }
+
+    .entity{
+        @include flex;
+        gap: 5px;
+    }
+
+    .accepted {
+        color: $theme-green;
+    }
+
+    .pending {
+        color: $secondary-theme-color;
+    }
+    .rejected {
+        color: $theme-red;
+    }
+
+    .number {
+        color: $theme-color;
+        font-weight: bold;
+    }
+}

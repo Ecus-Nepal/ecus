@@ -3,8 +3,8 @@ import NavBar from "components/shared/NavBar"
 import { useUser } from "context/user"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
+import { refreshToken } from "utils/refresh_token"
 import style from "../scss/login.module.scss"
-import { refreshToken } from "../utils/refresh_token"
 
 export default function Home() {
 

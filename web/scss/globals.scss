@@ -78,11 +78,11 @@ label{
   
   /* Handle */
   ::-webkit-scrollbar-thumb {
-    background: $secondaty-theme-color;
+    background: $theme-color;
     border-radius: 500px;
   }
   
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: lighten($color: $secondaty-theme-color, $amount: 25);
+    background: lighten($color: $theme-color, $amount: 25);
   }

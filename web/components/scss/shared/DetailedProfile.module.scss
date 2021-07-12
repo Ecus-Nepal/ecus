@@ -1,0 +1,40 @@
+.detailedProfile{
+
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 20px;
+
+    .userProfile{
+        width: 40%;
+        height: 100px;
+
+        @include flex(space-between);
+        
+        .pic {
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            background-color: yellowgreen;
+        }
+        .name {
+            font-size: 1.8rem;
+            font-weight: bold;
+
+            color: $theme-color;
+        }
+
+    }
+    .about{
+        padding: 0 10px;
+        max-height: 150px;
+        overflow: auto;
+    }
+
+    .wantedCat{
+        @include flex(flex-start, flex-start);
+        gap: 10px;
+    }
+}

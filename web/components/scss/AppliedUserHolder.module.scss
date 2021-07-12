@@ -1,0 +1,43 @@
+.appliedUserCard{
+    min-width: 259px;
+    height: 68px;
+
+    border-radius: 10px;
+    padding: 5px;
+
+    background-color: lighten($color: $card-color, $amount: 8);
+    @include flex(space-between);
+    cursor: pointer;
+    .pic{
+        width: 50px;
+        height: 50px;
+
+        border-radius: 50%;
+
+        background-color: lightgreen;
+    }
+
+    .name {
+        margin: 0 10px;
+    }
+
+    .action{
+
+        @include flex(space-between);
+        gap:20px;
+
+        span {
+            cursor: pointer;
+            user-select: none;
+            font-size: 2.5rem;
+        }
+
+        .tick {
+            color:$theme-green;
+        }
+        
+        .cross {
+            color: $theme-red;
+        }
+    }
+}

@@ -1,0 +1,59 @@
+.jobInfoArea{
+
+    position: fixed;
+    right: 0;
+    top: 0;
+
+    width: 75vw;
+    height: 100vh;
+    background-color: $card-color;
+
+    .closeInfoButton{   
+        width: 30px;
+        height: 30px;
+        border-radius:20px 0 0 20px;
+        background-color: $theme-red;
+        transform: translate(-100%, 20%);
+    }
+
+    .jobInfo{
+        width: 59%;
+        border-right: 1px solid #DFDFDF;
+
+        padding: 20px;
+        
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        overflow-y: auto;
+
+    }
+
+    .appliedUsers{
+        @include flex(flex-start, flex-start);
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+
+.profileModal{
+    @include position-center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    width: 50vw;
+    max-height: 400px;
+    overflow-y: auto;
+
+    padding: 10px;
+
+    
+    
+    outline: none;
+
+    border-radius: 10px;
+    background-color: $card-color;
+}

@@ -1,0 +1,10 @@
+.dash {
+    width: 93%;
+    min-height: 100vh;
+    height: fit-content;
+    margin-left: $logo-padding;
+    margin-top: 30px;
+
+    @include flex(space-between, flex-start);
+
+}

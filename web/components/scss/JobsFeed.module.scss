@@ -1,0 +1,21 @@
+$border-color: #d4d1d1;
+
+.jobsFeed {
+    width: 55%;
+    height: 800px;
+
+    background-color: white;
+    border-radius: 6px;
+    border: 1px solid $border-color;
+
+    .header {
+        height: 60px;
+        border-bottom: 1px solid $border-color;
+
+        font-size: 2rem;
+        font-weight: bold;
+        padding-left: 10px;
+
+        @include flex(flex-start);
+    }
+}

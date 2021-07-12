@@ -1,6 +1,6 @@
 
+import { useFetch } from "hooks/useFetch"
 import router from "next/router"
-import { useFetch } from "../../hooks/useFetch"
 import style from "../scss/shared/Header.module.scss"
 import ActionBtn from "./ActionBtn"
 

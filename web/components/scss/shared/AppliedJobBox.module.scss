@@ -1,0 +1,35 @@
+$card-color: #E3E3E3;
+
+.appliedJob{
+    width: 100%;
+    min-height: 90px;
+    
+    background-color: $card-color;
+
+    border-radius: 10px;
+    margin-bottom: 10px;
+    @include flex(flex-start);
+
+    padding-left: 10px;
+
+    cursor: pointer;
+
+    .info {
+        display: flex;
+        flex-direction: column;
+
+        .title {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+    
+        .name {
+            font-size: 1.2rem;
+        }
+    }
+
+    &:hover{
+        background-color: darken($color: $card-color, $amount: 3);
+    }
+
+}

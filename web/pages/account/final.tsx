@@ -4,8 +4,16 @@ import withAuth from "components/shared/withAuth"
 import { getsetupInfo } from "global/accountSetup"
 import { useFetch } from "hooks/useFetch"
 import router from "next/router"
+import { useEffect } from "react"
 import style from "../../scss/final.module.scss"
 const Final: React.FC = ({ }) => {
+
+    useEffect(() => {
+        console.log(
+            getsetupInfo()
+        )
+    }, [])
+
     const handleStart = async () => {
         const payload = getsetupInfo()
         const res = await useFetch(
