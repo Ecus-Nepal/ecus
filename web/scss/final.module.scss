@@ -1,0 +1,40 @@
+.final {
+    &__wraper{
+        width: 100vw;
+        height: 100vh;
+
+        background: url(../public/assets/waves/final.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+
+
+    }
+
+    &__container {
+        width: 80%;
+        height: 50%;
+        margin-left: $logo-padding;
+        
+        .heading {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-top: 16px;
+        }
+
+        .welcome {
+            font-size: 5rem;
+            font-weight: bolder;
+            margin-top: 16px;
+        }
+
+        .typeInfo {
+            font-size: 3rem;
+            margin-top: -16px;
+        }
+
+        .actionBtn {
+            display: flex;
+            gap: 20px;
+        }
+    }
+}

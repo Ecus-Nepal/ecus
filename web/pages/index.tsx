@@ -4,6 +4,7 @@ import { useUser } from "context/user"
 import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import style from "../scss/login.module.scss"
+import { refreshToken } from "../utils/refresh_token"
 
 export default function Home() {
 
@@ -15,6 +16,22 @@ export default function Home() {
   useEffect(() => {
     document.body.style.overflow = "hidden"
   })
+
+  useEffect(() => {
+    (async () => {
+      setLoading(true)
+      const decoded = await refreshToken()
+      if (decoded?.user) {
+        const { user } = decoded
+
+        setUser(user)
+
+        router.push("/dash")
+      } else {
+        setLoading(false)
+      }
+    })()
+  }, [])
 
   return (
     <>

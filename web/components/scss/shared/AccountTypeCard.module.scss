@@ -1,0 +1,36 @@
+.accountTypeCard{
+    width: 350px;
+    height: 400px;
+    flex-shrink: 0;
+
+    border-radius: 20px;
+
+    padding: 10px 20px;
+
+    color: $theme-color;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.02);
+    }
+
+
+    .avatar{
+        margin-top: 30px;
+    }
+
+    .info{
+        margin-top: 40px;
+        font-size: 1.9rem;
+        font-weight: 500;
+        color: $theme-color;
+
+        text-align: center;
+
+        span {
+            font-weight: bolder;
+            color: $theme-color;
+        }
+    }
+}

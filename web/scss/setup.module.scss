@@ -1,0 +1,66 @@
+.setup{
+    &__wraper{
+        width: 100vw;
+        height: 100vh;
+
+        background: url(../public/assets/waves/setup.svg);
+        background-repeat: no-repeat;
+        background-position: bottom;
+
+    }
+
+    &__container {
+        width: 80%;
+        max-height: 80%;
+        // overflow: auto;
+        .welcome {
+            font-size: 4rem;
+            font-weight: bold;
+        }
+
+        .text {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        @include position-center;
+
+
+        @media (max-width: $mobile-view) {
+            width: 90%;
+        }
+    }
+
+    .cardsSection {
+        width: 85%;
+        height: 85%;
+        margin: auto;
+
+        @include flex(center, flex-start);
+        flex-direction: column;
+
+        .cards {
+            align-self: center;
+            @include flex(space-between);
+            gap: 80px;
+            width: 90%;
+            @media (max-width: $mobile-view) {
+                justify-self: center;
+                width: 350px;
+
+                max-height: 500px;
+                overflow-y: auto;
+                overflow-x: hidden;
+                gap: 20px;
+                flex-direction: column;
+            }
+
+        }
+
+
+        @media (max-width: $mobile-view) {
+            width: 100%;
+        }
+
+    }
+    
+}

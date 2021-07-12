@@ -1,0 +1,60 @@
+.secondForm{
+    width: 500px;
+    height: 510px;
+
+    border-radius: 20px;
+    padding: 20px;
+
+    @include position-center;
+    background-color: $secondary-theme-color;
+    @include flex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 10px;
+    span{
+        color: $theme-color;
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .workAs {
+        position: relative;
+    }
+
+    .workSelector{
+        input {
+            color: $theme-color;
+        }
+    }
+
+    .selectedJobDisplay{
+        width: 100%;
+        height: 150px;
+        border-radius: 10px;
+        padding: 5px 10px;
+        background-color: $background-color;
+
+        @include flex(flex-start, flex-start);
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .about {
+        width: 100%;
+        textarea {
+            width: 100%;
+            height: 150px;
+            resize: none;
+
+            outline: none;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+        }        
+    }
+
+    .actionBtn {
+        width: 100%;
+        @include flex(space-between)
+    }
+}
