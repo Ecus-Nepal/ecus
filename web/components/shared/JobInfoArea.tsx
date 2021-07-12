@@ -17,6 +17,8 @@ Modal.setAppElement('#__next');
 const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
 
     const [showModal, setShowModal] = useState(false)
+    const [selectedClient, setSelectedClient] = useState<string | null>(null)
+
     const handleProfileClick = () => {
         setShowModal(true)
     }
@@ -90,8 +92,10 @@ const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
                                     <h3>Accepted Clients</h3>
                                     <ul>
                                         {
-                                            acceptedClients.map(client => (
-                                                <li>{client}</li>
+                                            acceptedClients.map((client, i) => (
+                                                <li
+                                                    onClick={() => setSelectedClient(client)}
+                                                    key={i}>{client}</li>
                                             ))
                                         }
 
@@ -102,7 +106,14 @@ const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
 
                     </div>
                     <div>
-                        <ChatContainer />
+                        {
+                            selectedClient &&
+                            <ChatContainer header={selectedClient} />
+                        }
+                        {
+                            !selectedClient &&
+                            <h2>No name Selected</h2>
+                        }
                     </div>
                 </div>
             </div>

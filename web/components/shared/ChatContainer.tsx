@@ -5,7 +5,11 @@ import ActionBtn from "./ActionBtn"
 
 interface IMessage { type: "received" | "sent", message: string }
 
-const ChatContainer: React.FC = ({ }) => {
+interface Props {
+    header: string
+}
+
+const ChatContainer: React.FC<Props> = ({ header }) => {
 
     const inputRef = useRef<HTMLInputElement>(null)
     const chatContainer = useRef<HTMLDivElement>(null)
@@ -35,7 +39,7 @@ const ChatContainer: React.FC = ({ }) => {
     return (
         <div className={style.chats} >
             <div className={style.title} >
-                Chats
+                {header}
             </div>
             <div className={style.wraper} >
                 <div className={style.chatContainer} ref={chatContainer}>
