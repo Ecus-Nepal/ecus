@@ -6,6 +6,6 @@ declare namespace NodeJS {
     GOOGLE_CLIENT_SECRET: string;
     SERVER_END_POINT: string;
     JWT_TOKEN: string;
-    REF_JWT_TOKEN: string;
+    REF_JWT_TOKEN: string
   }
 }
