@@ -1,53 +1,88 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap");
+$theme-color: hsl(246, 31%, 6%);
+$secondaty-theme-color: #828EFF;
+$background-color: #F5F0FC;
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins";
 }
 
-html {
-  font-size: 62.5%;
+html{
+    font-size: 60.5%;
 }
 
-body {
-  overflow: hidden;
-  background-color: $background-color;
+body{
+    overflow: hidden;
+    background-color: $background-color;
 
-  font-size: 1.4rem;
+    font-size: 1.4rem;
+
 }
 
-h1 {
-  font-size: 3.5rem;
+h1{
+    font-size: 3.5rem;
 }
 
-button {
-  border: none;
-  outline: none;
+button{
+    border: none;
+    outline: none;
 
-  cursor: pointer;
-  display: block;
+    cursor: pointer;
+    display: block;
 
-  font-family: "Poppins";
-  font-size: 1.2rem;
+    font-family: "Poppins";
+    font-size: 1.2rem;
 }
 
 input {
-  outline: none;
-  border: none;
-  padding-left: 20px;
-  font-family: "Poppins";
-  // &:focus{
-  //     outline: 2px solid $theme-color-lighter;
-  // }
+    outline: none;
+    border:none;
+    padding-left: 20px;
+    font-family: 'Poppins';
+    // &:focus{
+    //     outline: 2px solid $theme-color-lighter;
+    // }
 }
 
 textarea {
-  outline: none;
-  padding: 10px;
+    outline: none;
+    padding: 10px;  
 }
 
-label {
-  display: block;
+label{
+    display: block;
 }
+
+.highlight {
+    color: $secondaty-theme-color;
+}
+
+.bold {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $background-color;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $secondaty-theme-color;
+    border-radius: 500px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: lighten($color: $secondaty-theme-color, $amount: 25);
+  }
