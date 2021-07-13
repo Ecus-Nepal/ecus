@@ -36,6 +36,7 @@
 - Install both cilent and server depencies with `npm i`
 - Make `.env` files as shown in `.env.test`
 - Use following for clientID and clientSecret
+
 `clientid : 724294998382-npuo7gtnkgjinvgfnnkfcv334g2ci2tr.apps.googleusercontent.com`
 
 `clientsecret : EEFsEf5WlU-vDI8P05XImH8p`
