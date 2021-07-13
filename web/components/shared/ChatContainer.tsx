@@ -1,4 +1,4 @@
-import { FormEvent, useRef, useState } from "react"
+import { FormEvent, useEffect, useRef, useState } from "react"
 import { RiSendPlaneFill } from "react-icons/ri"
 import style from "../scss/shared/ChatContainer.module.scss"
 import ActionBtn from "./ActionBtn"
@@ -6,34 +6,37 @@ import ActionBtn from "./ActionBtn"
 interface IMessage { type: "received" | "sent", message: string }
 
 interface Props {
-    header: string
+    header?: string,
+    messagesList: IMessage[]
 }
 
-const ChatContainer: React.FC<Props> = ({ header }) => {
+const ChatContainer: React.FC<Props> = ({ header, messagesList }) => {
 
     const inputRef = useRef<HTMLInputElement>(null)
     const chatContainer = useRef<HTMLDivElement>(null)
-    const messagesList: IMessage[] = [
-        {
-            type: "received",
-            message: "fsdfsdfsfd"
-        },
-        {
-            type: "sent",
-            message: "fsdfsdfsfd"
-        }
-    ]
+
 
     const [messages, setMessages] = useState<IMessage[]>(messagesList)
+
+    useEffect(() => {
+
+        const chatAreaSize = chatContainer.current!.scrollHeight
+        chatContainer.current?.scrollTo(0, chatAreaSize)
+
+    }, [chatContainer.current?.scrollHeight])
 
     const handleSendMessage = (e: FormEvent) => {
         e.preventDefault()
         if (inputRef.current?.value.trim() === "") return
-        setMessages(prev => prev.concat({
-            type: "sent",
-            message: inputRef.current!.value
-        }))
-        chatContainer.current?.scrollTo(0, chatContainer.current.scrollHeight)
+        const message = inputRef.current!.value
+        setMessages(prev => {
+            return prev.concat({
+                type: "sent",
+                message: message
+            })
+        })
+        inputRef.current!.value = ""
+
     }
 
     return (

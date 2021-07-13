@@ -99,6 +99,7 @@ const JobsFeed: React.FC = ({ }) => {
                     }
                 }
             >
+                <h2 style={{ marginBottom: "-20px" }} >Fill you application request</h2>
                 <textarea />
                 <div className={style.actionBtn} >
                     <ActionBtn type="button" action="bad" onClick={() => setShowApplyModal(false)} >Cancle </ActionBtn>

@@ -9,6 +9,8 @@
     background-color: $card-color;
 
     border-left: 2px solid #9c9c9c;
+    // overflow-y: auto;
+
 
     .container {
         @include flex(flex-start, flex-start);
@@ -26,7 +28,7 @@
     .jobInfo{
         width: 59%;
         border-right: 1px solid #DFDFDF;
-
+        height: 100vh;
         padding: 20px;
         
         display: flex;
@@ -45,15 +47,17 @@
 
 
     .acceptedClient{
-
-        height: 100px;
         ul {
             height: 100%;
+            overflow-y: auto;
             @include flex(flex-start, flex-start);
             flex-direction: column;
             flex-wrap: wrap;
             margin-top: 10px;
+            gap: 20px;
             list-style: none;
+
+            margin-bottom: 30px;
         }
 
         li {
@@ -61,6 +65,12 @@
             font-size: 1.8rem;
             font-weight: bolder;
             color: $secondary-theme-color;
+
+            @include flex(space-between);
+
+            width: 350px;
+
+
         }
     }
 

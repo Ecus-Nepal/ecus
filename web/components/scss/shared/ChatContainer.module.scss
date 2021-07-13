@@ -19,7 +19,7 @@
 
         padding: 10px;
 
-        position: relative;
+        // position: relative;
 
         display: flex;
         flex-direction: column;
@@ -53,6 +53,7 @@
     }
 
     .inputChatMsg{
+        // display: none;
         width: 100%;
         form {
             width: 100%;

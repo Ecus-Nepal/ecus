@@ -35,7 +35,7 @@ const EmployerProfile: React.FC = ({ }) => {
                 } >
                 {
                     showJobsArea &&
-                    <JobInfoArea type="employer" title="A random job" setInfoShow={setShowJobsArea} />
+                    <JobInfoArea state="approved" type="employer" title="A random job" setInfoShow={setShowJobsArea} />
                 }
                 <div className={style.employerProfile} >
                     <UserProfile />

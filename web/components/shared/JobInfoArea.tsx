@@ -9,12 +9,34 @@ import DetailedProfile from "./DetailedProfile";
 interface Props {
     title: string,
     setInfoShow: Dispatch<SetStateAction<boolean>>,
-    type: "employer" | "employee"
+    type: "employer" | "employee",
+    state: "waiting" | "approved"
 }
+
+interface IMessage { type: "received" | "sent", message: string }
+
 
 Modal.setAppElement('#__next');
 
-const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
+const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type, state }) => {
+
+
+
+    const messagesList: IMessage[] = [
+        {
+            type: "received",
+            message: "fsdfsdfsfd"
+        },
+        {
+            type: "sent",
+            message: "fsdfsdfsfd"
+        }
+    ]
+
+
+
+
+
 
     const [showModal, setShowModal] = useState(false)
     const [selectedClient, setSelectedClient] = useState<string | null>(null)
@@ -69,6 +91,19 @@ const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
                             Salary: Rs 20,200
                         </div>
 
+
+                        {
+                            type === "employee" && state === "waiting" &&
+                            <h2>Waiting for approval ...</h2>
+
+                        }
+
+
+
+
+
+
+
                         {
                             type === "employer" &&
                             <>
@@ -95,7 +130,9 @@ const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
                                             acceptedClients.map((client, i) => (
                                                 <li
                                                     onClick={() => setSelectedClient(client)}
-                                                    key={i}>{client}</li>
+                                                    key={i}>{client}
+                                                    <ActionBtn type="button" action="good" >Hire and Pay</ActionBtn>
+                                                </li>
                                             ))
                                         }
 
@@ -107,11 +144,17 @@ const JobInfoArea: React.FC<Props> = ({ title, setInfoShow, type }) => {
                     </div>
                     <div>
                         {
-                            selectedClient &&
-                            <ChatContainer header={selectedClient} />
+                            selectedClient && state === "approved" &&
+                            <ChatContainer header={selectedClient} messagesList={messagesList} />
                         }
+
                         {
-                            !selectedClient &&
+                            type === "employee" && state === "approved" &&
+                            <ChatContainer header="Chat" messagesList={messagesList} />
+                        }
+
+                        {
+                            !selectedClient && !(type === "employee") &&
                             <h2>No name Selected</h2>
                         }
                     </div>

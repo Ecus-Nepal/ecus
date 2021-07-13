@@ -26,7 +26,7 @@ const NavBar: React.FC<Props> = ({ withLogout }) => {
         <header className={style.header} >
             <nav>
                 <div className={style.logo}>
-                    LOGO
+                    ECUS
                 </div>
                 {
                     withLogout &&
