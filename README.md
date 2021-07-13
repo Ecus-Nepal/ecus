@@ -1,6 +1,6 @@
 # ECUS
 
-<h3><p>Ecus is a web app platform designed to solve the existing communiation problem between employer and employee in these dire times when COVID-19 is on it's peak .</p>
+<p>Ecus is a web app platform designed to solve the existing communiation problem between employer and employee in these dire times when COVID-19 is on it's peak .</p>
 
 <p>We are providing a simple, secure and easy-to-use communication platform that with a well-thought payment system.</p>
 
@@ -36,6 +36,6 @@
 - Install both cilent and server depencies with `npm i`
 - Make `.env` files as shown in `.env.test`
 - Use following for clientID and clientSecret
-- `clientid : 724294998382-npuo7gtnkgjinvgfnnkfcv334g2ci2tr.apps.googleusercontent.com`
+`clientid : 724294998382-npuo7gtnkgjinvgfnnkfcv334g2ci2tr.apps.googleusercontent.com`
 
 `clientsecret : EEFsEf5WlU-vDI8P05XImH8p`
